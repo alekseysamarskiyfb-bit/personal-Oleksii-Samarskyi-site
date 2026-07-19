@@ -39,12 +39,12 @@ export default function GrowthLine({
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <line x1="12" y1="0" x2="12" y2="400" stroke="#2C2620" strokeWidth="2" />
+        <line x1="12" y1="0" x2="12" y2="400" stroke="#24262B" strokeWidth="1.5" />
         <path
           ref={ref}
           d="M12 0 L12 400"
-          stroke="#FF3D6E"
-          strokeWidth="2"
+          stroke="#C9A961"
+          strokeWidth="1.5"
           className={`growth-path ${drawn ? "is-drawn" : ""}`}
         />
       </svg>
@@ -53,21 +53,27 @@ export default function GrowthLine({
 
   return (
     <svg
-      viewBox="0 0 640 220"
+      viewBox="0 0 640 160"
       className={className}
       fill="none"
       aria-hidden="true"
     >
       <path
+        d="M8 130 C 90 128, 140 118, 190 100 C 230 85, 250 62, 300 58 C 340 55, 360 78, 405 70 C 445 63, 460 34, 510 25 C 550 18, 580 19, 632 8"
+        stroke="#24262B"
+        strokeWidth="1"
+        strokeDasharray="2 4"
+      />
+      <path
         ref={ref}
-        d="M8 190 C 90 188, 140 175, 190 150 C 230 130, 250 95, 300 90 C 340 86, 360 118, 405 108 C 445 99, 460 55, 510 42 C 550 32, 580 34, 632 16"
-        stroke="#FF3D6E"
-        strokeWidth="4"
+        d="M8 130 C 90 128, 140 118, 190 100 C 230 85, 250 62, 300 58 C 340 55, 360 78, 405 70 C 445 63, 460 34, 510 25 C 550 18, 580 19, 632 8"
+        stroke="#C9A961"
+        strokeWidth="1.5"
         strokeLinecap="round"
         className={`growth-path ${drawn ? "is-drawn" : ""}`}
       />
-      <circle cx="632" cy="16" r="7" fill="#FF3D6E" />
-      <circle cx="8" cy="190" r="5" fill="#5B4CFF" />
+      <circle cx="632" cy="8" r="3.5" fill="#C9A961" />
+      <circle cx="8" cy="130" r="2.5" fill="#8A8D93" />
     </svg>
   );
 }

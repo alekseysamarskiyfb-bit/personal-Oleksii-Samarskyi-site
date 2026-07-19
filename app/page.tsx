@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import GrowthLine from "@/components/GrowthLine";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
+import StatCounter from "@/components/StatCounter";
 
 export default function Home() {
   return (
@@ -10,16 +11,14 @@ export default function Home() {
       <Nav />
 
       {/* HERO */}
-      <section className="max-w-content mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-16">
-        <div className="grid md:grid-cols-[1fr_auto] gap-10 items-start">
+      <section className="max-w-content mx-auto px-6 pt-16 pb-14 md:pt-20 md:pb-16">
+        <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
           <div>
             <p className="eyebrow eyebrow-signal mb-6">Co-founder, Creako Labs</p>
-            <h1 className="font-display text-[13vw] leading-[0.95] md:text-[5.2rem] md:leading-[0.95] font-extrabold tracking-tight">
-              Creative that
+            <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight">
+              Performance creative.
               <br />
-              <span className="text-signal">converts.</span> Growth
-              <br />
-              that <span className="text-data">compounds.</span>
+              <span className="text-signal">Compounding</span> growth.
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted max-w-xl">
               3+ years producing performance creative for paid acquisition.
@@ -43,24 +42,47 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="justify-self-start md:justify-self-end">
-            <div className="w-28 h-28 md:w-40 md:h-40 rounded-2xl overflow-hidden border hairline rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="portrait-wrap relative w-full max-w-sm mx-auto md:mx-0 md:ml-auto">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border hairline">
               <Image
                 src="/avatar.jpeg"
                 alt="Aleksey Samarskiy"
-                width={320}
-                height={320}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(min-width: 768px) 380px, 90vw"
+                className="portrait object-cover"
                 priority
               />
+              <div className="portrait-overlay absolute inset-0 pointer-events-none" />
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-ink border hairline rounded-xl px-4 py-3 hidden md:block">
+              <p className="eyebrow">Based in</p>
+              <p className="font-display text-sm font-medium">Poland · Remote</p>
             </div>
           </div>
         </div>
 
-        <GrowthLine className="w-full max-w-xl h-auto mt-14" />
+        <GrowthLine className="w-full max-w-xl h-auto mt-16" />
       </section>
 
       <Marquee />
+
+      {/* STATS */}
+      <section className="max-w-content mx-auto px-6 py-14 md:py-16 border-b hairline">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <Reveal>
+            <StatCounter value={3} suffix="+" label="Years in performance creative" />
+          </Reveal>
+          <Reveal delay={80}>
+            <StatCounter value={4} label="Designers led" />
+          </Reveal>
+          <Reveal delay={160}>
+            <StatCounter value={10} suffix="+" label="Platforms & AI tools" />
+          </Reveal>
+          <Reveal delay={240}>
+            <StatCounter value={2} label="Products at Creako Labs" />
+          </Reveal>
+        </div>
+      </section>
 
       {/* ABOUT */}
       <section id="about" className="max-w-content mx-auto px-6 py-20 md:py-28">

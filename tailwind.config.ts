@@ -8,15 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#120F0D",
-        "ink-2": "#1C1815",
-        "ink-3": "#241F1B",
-        paper: "#F3EDE1",
-        text: "#F5F1E9",
-        muted: "#A69C8D",
-        signal: "#FF3D6E",
-        data: "#5B4CFF",
-        line: "#2C2620",
+        ink: "#0B0C0F",
+        "ink-2": "#141519",
+        "ink-3": "#1B1D22",
+        paper: "#F2F1ED",
+        text: "#F2F1ED",
+        muted: "#8A8D93",
+        signal: "#C9A961",
+        data: "#8A8D93",
+        line: "#24262B",
       },
       fontFamily: {
         display: ["var(--font-display)"],

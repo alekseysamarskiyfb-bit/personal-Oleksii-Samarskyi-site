@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Unbounded, Inter, Space_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const display = Unbounded({
+const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700"],
 });
 
 const body = Inter({
@@ -14,10 +14,10 @@ const body = Inter({
   weight: ["400", "500", "600"],
 });
 
-const mono = Space_Mono({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "700"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
