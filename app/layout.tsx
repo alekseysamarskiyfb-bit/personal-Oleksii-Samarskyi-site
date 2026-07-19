@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Unbounded, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({
+const display = Unbounded({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
 const body = Inter({
@@ -14,10 +14,10 @@ const body = Inter({
   weight: ["400", "500", "600"],
 });
 
-const mono = IBM_Plex_Mono({
+const mono = Space_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {

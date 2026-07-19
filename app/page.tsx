@@ -1,14 +1,8 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import GrowthLine from "@/components/GrowthLine";
-
-function Divider() {
-  return (
-    <div className="max-w-content mx-auto px-6">
-      <GrowthLine variant="divider" className="w-full h-8 opacity-70" />
-    </div>
-  );
-}
+import Marquee from "@/components/Marquee";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
@@ -16,29 +10,33 @@ export default function Home() {
       <Nav />
 
       {/* HERO */}
-      <section className="max-w-content mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+      <section className="max-w-content mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-16">
         <div className="grid md:grid-cols-[1fr_auto] gap-10 items-start">
           <div>
-            <p className="eyebrow eyebrow-signal mb-5">Co-founder, Creako Labs</p>
-            <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight max-w-3xl">
-              Building and growing our own digital products.
+            <p className="eyebrow eyebrow-signal mb-6">Co-founder, Creako Labs</p>
+            <h1 className="font-display text-[13vw] leading-[0.95] md:text-[5.2rem] md:leading-[0.95] font-extrabold tracking-tight">
+              Creative that
+              <br />
+              <span className="text-signal">converts.</span> Growth
+              <br />
+              that <span className="text-data">compounds.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl">
-              Design-led from the start. Now driving growth — audits,
-              experiments, paid acquisition and creative — for the products
-              Creako Labs builds.
+            <p className="mt-8 text-lg md:text-xl text-muted max-w-xl">
+              3+ years producing performance creative for paid acquisition.
+              Now building brand and growth for the products Creako Labs
+              makes.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="bg-signal text-ink font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
+                className="bg-signal text-ink font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
               >
                 Get in touch
               </a>
               <a
                 href="#products"
-                className="eyebrow border hairline px-6 py-3 rounded-full hover:text-text transition-colors focus-ring"
+                className="tag border hairline px-6 py-3 rounded-full hover:text-text hover:border-text transition-colors focus-ring"
               >
                 See the products
               </a>
@@ -46,12 +44,12 @@ export default function Home() {
           </div>
 
           <div className="justify-self-start md:justify-self-end">
-            <div className="w-32 h-32 md:w-44 md:h-44 rounded-2xl overflow-hidden border hairline">
+            <div className="w-28 h-28 md:w-40 md:h-40 rounded-2xl overflow-hidden border hairline rotate-2 hover:rotate-0 transition-transform duration-500">
               <Image
                 src="/avatar.jpeg"
                 alt="Aleksey Samarskiy"
-                width={352}
-                height={352}
+                width={320}
+                height={320}
                 className="w-full h-full object-cover"
                 priority
               />
@@ -59,19 +57,25 @@ export default function Home() {
           </div>
         </div>
 
-        <GrowthLine className="w-full max-w-2xl h-auto mt-16" />
+        <GrowthLine className="w-full max-w-xl h-auto mt-14" />
       </section>
 
-      <Divider />
+      <Marquee />
 
       {/* ABOUT */}
       <section id="about" className="max-w-content mx-auto px-6 py-20 md:py-28">
-        <p className="eyebrow mb-4">About</p>
+        <Reveal>
+          <p className="eyebrow mb-4">About</p>
+        </Reveal>
         <div className="grid md:grid-cols-[1fr_1.4fr] gap-10">
-          <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
-            From brand to growth.
-          </h2>
-          <div className="space-y-5 text-muted text-lg leading-relaxed">
+          <Reveal>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
+              From ad creative
+              <br />
+              to growth.
+            </h2>
+          </Reveal>
+          <Reveal delay={100} className="space-y-5 text-muted text-lg leading-relaxed">
             <p>
               I started as a designer — UI/UX, branding, logo and identity
               work, creative direction. That background is still the base
@@ -94,67 +98,71 @@ export default function Home() {
               together. He builds the products. I'm bringing that same
               loop — brand, creative and growth — to the products we build.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
-
-      <Divider />
 
       {/* CREAKO LABS */}
-      <section id="creako" className="max-w-content mx-auto px-6 py-20 md:py-28">
-        <p className="eyebrow eyebrow-data mb-4">Company</p>
-        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-8">
-          Creako Labs
-        </h2>
+      <section id="creako" className="max-w-content mx-auto px-6 py-20 md:py-28 border-t hairline">
+        <Reveal>
+          <p className="eyebrow eyebrow-data mb-4">Company</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-10">
+            Creako Labs
+          </h2>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          <p className="text-lg text-muted leading-relaxed">
-            Not an agency — a product studio. My brother Mark and I
-            co-founded Creako Labs to build our own digital products end
-            to end, from concept to growth, rather than working to
-            someone else's brief.
-          </p>
+          <Reveal>
+            <p className="text-lg text-muted leading-relaxed">
+              Not an agency — a product studio. My brother Mark and I
+              co-founded Creako Labs to build our own digital products end
+              to end, from concept to growth, rather than working to
+              someone else's brief.
+            </p>
+          </Reveal>
 
-          <div className="bg-ink-2 border hairline rounded-2xl p-6">
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <p className="eyebrow mb-2">Product & engineering</p>
-                <p className="font-display text-xl font-medium">Mark Skrypka</p>
+          <Reveal delay={100}>
+            <div className="bg-ink-2 border hairline rounded-2xl p-6 hover-lift">
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <p className="eyebrow mb-2">Product & engineering</p>
+                  <p className="font-display text-xl font-semibold">Mark Skrypka</p>
+                </div>
+                <div>
+                  <p className="eyebrow eyebrow-signal mb-2">Brand & growth</p>
+                  <p className="font-display text-xl font-semibold">Aleksey Samarskiy</p>
+                </div>
               </div>
-              <div>
-                <p className="eyebrow eyebrow-signal mb-2">Brand & growth</p>
-                <p className="font-display text-xl font-medium">Aleksey Samarskiy</p>
+              <div className="mt-6 pt-6 border-t hairline">
+                <p className="eyebrow mb-3">Products</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="tag bg-ink-3 border hairline rounded-full px-3 py-1.5">
+                    Recal
+                  </span>
+                  <span className="tag bg-ink-3 border hairline rounded-full px-3 py-1.5">
+                    Ray
+                  </span>
+                  <span className="tag text-muted border border-dashed hairline rounded-full px-3 py-1.5">
+                    + future products
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="mt-6 pt-6 border-t hairline">
-              <p className="eyebrow mb-3">Products</p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-sm bg-ink-3 border hairline rounded-full px-3 py-1">
-                  Recal
-                </span>
-                <span className="text-sm bg-ink-3 border hairline rounded-full px-3 py-1">
-                  Ray
-                </span>
-                <span className="text-sm text-muted border border-dashed hairline rounded-full px-3 py-1">
-                  + future products
-                </span>
-              </div>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <Divider />
-
       {/* CAPABILITIES */}
-      <section id="capabilities" className="max-w-content mx-auto px-6 py-20 md:py-28">
-        <p className="eyebrow mb-4">Capabilities</p>
-        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-12 max-w-2xl">
-          What I bring to a product.
-        </h2>
+      <section id="capabilities" className="max-w-content mx-auto px-6 py-20 md:py-28 border-t hairline">
+        <Reveal>
+          <p className="eyebrow mb-4">Capabilities</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-14 max-w-2xl">
+            What I bring to a product.
+          </h2>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div>
+          <Reveal>
             <p className="eyebrow eyebrow-signal mb-4">Growth & performance</p>
             <ul className="space-y-3 text-muted">
               <li>Growth audits &amp; analytics</li>
@@ -162,8 +170,8 @@ export default function Home() {
               <li>Paid acquisition — Meta, TikTok, Google</li>
               <li>SEO</li>
             </ul>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={80}>
             <p className="eyebrow eyebrow-data mb-4">Brand & creative</p>
             <ul className="space-y-3 text-muted">
               <li>Logo &amp; brand identity</li>
@@ -171,32 +179,33 @@ export default function Home() {
               <li>Creative direction</li>
               <li>Midjourney, Runway, HeyGen, After Effects</li>
             </ul>
-          </div>
-          <div>
+          </Reveal>
+          <Reveal delay={160}>
             <p className="eyebrow mb-4">Product & team</p>
             <ul className="space-y-3 text-muted">
               <li>UI/UX design</li>
               <li>Design systems</li>
               <li>Leading creative teams</li>
             </ul>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <Divider />
-
       {/* TRACK RECORD */}
-      <section id="track-record" className="max-w-content mx-auto px-6 py-20 md:py-28">
-        <p className="eyebrow mb-4">Track record</p>
-        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-12 max-w-2xl">
-          From performance creative to building our own products.
-        </h2>
+      <section id="track-record" className="max-w-content mx-auto px-6 py-20 md:py-28 border-t hairline">
+        <Reveal>
+          <p className="eyebrow mb-4">Track record</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-14 max-w-2xl">
+            From performance creative to building our own products.
+          </h2>
+        </Reveal>
 
-        <div className="space-y-10">
-          {/* Creako Labs — now */}
-          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
-            <p className="eyebrow eyebrow-signal">Now</p>
-            <div>
+        <div className="relative grid grid-cols-[24px_1fr] gap-6 md:gap-10">
+          <GrowthLine variant="timeline" className="w-6 h-full" />
+
+          <div className="space-y-14">
+            <Reveal>
+              <p className="eyebrow eyebrow-signal mb-2">Now</p>
               <h3 className="font-display text-xl font-semibold mb-1">
                 Co-founder — Creako Labs
               </h3>
@@ -206,18 +215,15 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Brand", "Growth", "Product Design"].map((t) => (
-                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                  <span key={t} className="tag border hairline rounded-full px-3 py-1">
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
+            </Reveal>
 
-          {/* Senior Performance Creative Designer */}
-          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
-            <p className="eyebrow">Dec 2025 — Present</p>
-            <div>
+            <Reveal>
+              <p className="eyebrow mb-2">Dec 2025 — Present</p>
               <h3 className="font-display text-xl font-semibold mb-1">
                 Senior Performance Creative Designer
               </h3>
@@ -229,41 +235,34 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Performance Marketing", "Motion Design", "AI Creative"].map((t) => (
-                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                  <span key={t} className="tag border hairline rounded-full px-3 py-1">
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
+            </Reveal>
 
-          {/* Traffic Place */}
-          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
-            <p className="eyebrow">Oct 2025 — Apr 2026</p>
-            <div>
+            <Reveal>
+              <p className="eyebrow mb-2">Oct 2025 — Apr 2026</p>
               <h3 className="font-display text-xl font-semibold mb-1">
                 Performance Creative Designer — Traffic Place
               </h3>
               <p className="eyebrow mb-3">Part-time · Remote</p>
               <p className="text-muted mb-3">
-                Built AI-generated and UGC-style ad creatives for Sweepstakes
-                campaigns across paid social.
+                Built AI-generated and UGC-style ad creatives for
+                Sweepstakes campaigns across paid social.
               </p>
               <div className="flex flex-wrap gap-2">
                 {["UGC Advertising", "Prompt Engineering"].map((t) => (
-                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                  <span key={t} className="tag border hairline rounded-full px-3 py-1">
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
+            </Reveal>
 
-          {/* ADPRODIGIES — nested */}
-          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
-            <p className="eyebrow">Aug 2024 — Nov 2025</p>
-            <div>
-              <p className="eyebrow eyebrow-data mb-3">ADPRODIGIES · 1 yr 4 mos · Remote</p>
+            <Reveal>
+              <p className="eyebrow eyebrow-data mb-2">ADPRODIGIES · 1 yr 4 mos · Remote</p>
 
               <div className="mb-6">
                 <h3 className="font-display text-xl font-semibold mb-1">
@@ -282,25 +281,22 @@ export default function Home() {
                 </h3>
                 <p className="eyebrow mb-3">Aug 2024 — Aug 2025 · 1 yr 1 mo · Ukraine</p>
                 <p className="text-muted mb-3">
-                  Led a team of 4 designers, ran weekly creative reviews with
-                  media buyers and owned the team's A/B-testing and
+                  Led a team of 4 designers, ran weekly creative reviews
+                  with media buyers and owned the team's A/B-testing and
                   production workflow.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Team Leadership", "Performance Marketing"].map((t) => (
-                    <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                    <span key={t} className="tag border hairline rounded-full px-3 py-1">
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
+            </Reveal>
 
-          {/* Private Media Buying Team */}
-          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
-            <p className="eyebrow">Nov 2024 — Jul 2025</p>
-            <div>
+            <Reveal>
+              <p className="eyebrow mb-2">Nov 2024 — Jul 2025</p>
               <h3 className="font-display text-xl font-semibold mb-1">
                 Performance Creative Designer
               </h3>
@@ -311,106 +307,107 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {["Affiliate Marketing", "Banner Design"].map((t) => (
-                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                  <span key={t} className="tag border hairline rounded-full px-3 py-1">
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
+            </Reveal>
 
-          {/* Earlier roles, condensed */}
-          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10">
-            <p className="eyebrow">Sep 2023 — Sep 2024</p>
-            <div>
+            <Reveal>
+              <p className="eyebrow mb-2">Sep 2023 — Sep 2024</p>
               <h3 className="font-display text-xl font-semibold mb-1">
                 Creative Designer → Junior Performance Designer
               </h3>
               <p className="eyebrow mb-3">Affiliate & performance marketing teams · Ukraine / Remote</p>
               <p className="text-muted">
                 Early roles producing static, video and animated ad
-                creatives for Search, Sweepstakes and Crypto paid campaigns —
-                where the performance-creative loop started.
+                creatives for Search, Sweepstakes and Crypto paid
+                campaigns — where the performance-creative loop started.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
-
-      <Divider />
 
       {/* PRODUCTS */}
-      <section id="products" className="max-w-content mx-auto px-6 py-20 md:py-28">
-        <p className="eyebrow mb-4">Proof of work</p>
-        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-12 max-w-2xl">
-          Products I'm growing, from Creako Labs.
-        </h2>
+      <section id="products" className="max-w-content mx-auto px-6 py-20 md:py-28 border-t hairline">
+        <Reveal>
+          <p className="eyebrow mb-4">Proof of work</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-14 max-w-2xl">
+            Products I'm growing, from Creako Labs.
+          </h2>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Recal */}
-          <div className="bg-ink-2 border hairline rounded-2xl p-8">
-            <div className="flex items-center justify-between mb-4">
-              <p className="eyebrow eyebrow-signal">Live</p>
-              <p className="eyebrow">Creako Labs</p>
+          <Reveal>
+            <div className="bg-ink-2 border hairline rounded-2xl p-8 hover-lift h-full">
+              <div className="flex items-center justify-between mb-4">
+                <p className="eyebrow eyebrow-signal">Live</p>
+                <p className="eyebrow">Creako Labs</p>
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-2">Recal</h3>
+              <p className="eyebrow mb-4">Role — Growth & Creative</p>
+              <p className="text-muted leading-relaxed">
+                Running growth audits, testing acquisition channels and
+                building the creative — ad visuals and previews — behind
+                the campaigns.
+              </p>
             </div>
-            <h3 className="font-display text-2xl font-semibold mb-2">Recal</h3>
-            <p className="eyebrow mb-4">Role — Growth & Creative</p>
-            <p className="text-muted leading-relaxed">
-              Running growth audits, testing acquisition channels and
-              building the creative — ad visuals and previews — behind the
-              campaigns.
-            </p>
-          </div>
+          </Reveal>
 
-          {/* Ray */}
-          <div className="bg-ink-2 border hairline rounded-2xl p-8">
-            <div className="flex items-center justify-between mb-4">
-              <p className="eyebrow eyebrow-data">Building</p>
-              <p className="eyebrow">Creako Labs</p>
+          <Reveal delay={100}>
+            <div className="bg-ink-2 border hairline rounded-2xl p-8 hover-lift h-full">
+              <div className="flex items-center justify-between mb-4">
+                <p className="eyebrow eyebrow-data">Building</p>
+                <p className="eyebrow">Creako Labs</p>
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-2">Ray</h3>
+              <p className="eyebrow mb-4">Role — Growth & Creative</p>
+              <p className="text-muted leading-relaxed">
+                Laying the brand and growth foundation early — identity,
+                positioning and the first acquisition experiments — as the
+                product moves toward launch.
+              </p>
             </div>
-            <h3 className="font-display text-2xl font-semibold mb-2">Ray</h3>
-            <p className="eyebrow mb-4">Role — Growth & Creative</p>
-            <p className="text-muted leading-relaxed">
-              Laying the brand and growth foundation early — identity,
-              positioning and the first acquisition experiments — as the
-              product moves toward launch.
-            </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      <Divider />
-
       {/* CONTACT */}
-      <section id="contact" className="max-w-content mx-auto px-6 py-20 md:py-28">
-        <p className="eyebrow mb-4">Contact</p>
-        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl mb-6">
-          Building a product? Let's talk.
-        </h2>
-        <p className="text-lg text-muted max-w-xl mb-10">
-          Open to conversations with founders, partners and teams working
-          on brand, design and growth for early-stage products.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="mailto:oleksii.samarskyii@gmail.com"
-            className="bg-signal text-ink font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
-          >
-            oleksii.samarskyii@gmail.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/oleksii-samarskyi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="eyebrow border hairline px-6 py-3 rounded-full hover:text-text transition-colors focus-ring"
-          >
-            LinkedIn
-          </a>
-        </div>
+      <section id="contact" className="max-w-content mx-auto px-6 py-20 md:py-28 border-t hairline">
+        <Reveal>
+          <p className="eyebrow mb-4">Contact</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight max-w-2xl mb-6">
+            Building a product?
+            <br />
+            Let's talk.
+          </h2>
+          <p className="text-lg text-muted max-w-xl mb-10">
+            Open to conversations with founders, partners and teams working
+            on brand, design and growth for early-stage products.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="mailto:oleksii.samarskyii@gmail.com"
+              className="bg-signal text-ink font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
+            >
+              oleksii.samarskyii@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/oleksii-samarskyi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tag border hairline px-6 py-3 rounded-full hover:text-text hover:border-text transition-colors focus-ring"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </Reveal>
       </section>
 
       <footer className="border-t hairline">
-        <div className="max-w-content mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-2 text-muted eyebrow">
+        <div className="max-w-content mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-2 text-muted tag">
           <p>Aleksey Samarskiy — Co-founder, Creako Labs</p>
           <p>© 2026</p>
         </div>

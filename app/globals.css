@@ -7,33 +7,102 @@ html {
 }
 
 body {
-  background-color: #14171C;
-  color: #ECE9E2;
+  background-color: #120F0D;
+  color: #F5F1E9;
 }
 
 ::selection {
-  background-color: #FF4A2E;
-  color: #14171C;
+  background-color: #FF3D6E;
+  color: #120F0D;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8B93A1;
+  color: #A69C8D;
 }
 
-.eyebrow-signal {
-  color: #FF4A2E;
+.eyebrow-signal { color: #FF3D6E; }
+.eyebrow-data { color: #5B4CFF; }
+
+.hairline { border-color: #2C2620; }
+
+/* ---- Marquee ticker ---- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
 }
 
-.eyebrow-data {
-  color: #6C8CFF;
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.hairline {
-  border-color: #262B34;
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Growth line draw-in ---- */
+.growth-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.growth-path.is-drawn {
+  stroke-dashoffset: 0;
+}
+
+/* ---- Hover lift for cards ---- */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ---- Word highlight underline sweep ---- */
+.underline-sweep {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.06em;
+  width: 100%;
+  height: 0.1em;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.underline-sweep.is-visible::after {
+  transform: scaleX(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -43,23 +112,16 @@ body {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Signature growth-line draw-in animation */
-.growth-path {
-  stroke-dasharray: 900;
-  stroke-dashoffset: 900;
-  animation: draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  animation-delay: 0.2s;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .growth-path {
+    stroke-dashoffset: 0 !important;
   }
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid #6C8CFF;
+  outline: 2px solid #5B4CFF;
   outline-offset: 3px;
 }

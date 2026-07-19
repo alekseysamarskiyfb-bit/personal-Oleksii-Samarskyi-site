@@ -9,7 +9,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 bg-ink/85 backdrop-blur border-b hairline">
+    <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b hairline">
       <nav className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
         <a
           href="#top"
@@ -22,7 +22,7 @@ export default function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="eyebrow hover:text-text transition-colors focus-ring rounded"
+                className="tag text-muted hover:text-text transition-colors focus-ring rounded no-underline"
               >
                 {l.label}
               </a>
