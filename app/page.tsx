@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import GrowthLine from "@/components/GrowthLine";
 
@@ -16,29 +17,46 @@ export default function Home() {
 
       {/* HERO */}
       <section className="max-w-content mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-        <p className="eyebrow eyebrow-signal mb-5">Co-founder, Creako Labs</p>
-        <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight max-w-3xl">
-          Building and growing our own digital products.
-        </h1>
-        <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl">
-          Design-led from the start. Now driving growth — audits,
-          experiments, paid acquisition and creative — for the products
-          Creako Labs builds.
-        </p>
+        <div className="grid md:grid-cols-[1fr_auto] gap-10 items-start">
+          <div>
+            <p className="eyebrow eyebrow-signal mb-5">Co-founder, Creako Labs</p>
+            <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight max-w-3xl">
+              Building and growing our own digital products.
+            </h1>
+            <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl">
+              Design-led from the start. Now driving growth — audits,
+              experiments, paid acquisition and creative — for the products
+              Creako Labs builds.
+            </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a
-            href="#contact"
-            className="bg-signal text-ink font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
-          >
-            Get in touch
-          </a>
-          <a
-            href="#products"
-            className="eyebrow border hairline px-6 py-3 rounded-full hover:text-text transition-colors focus-ring"
-          >
-            See the products
-          </a>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                className="bg-signal text-ink font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
+              >
+                Get in touch
+              </a>
+              <a
+                href="#products"
+                className="eyebrow border hairline px-6 py-3 rounded-full hover:text-text transition-colors focus-ring"
+              >
+                See the products
+              </a>
+            </div>
+          </div>
+
+          <div className="justify-self-start md:justify-self-end">
+            <div className="w-32 h-32 md:w-44 md:h-44 rounded-2xl overflow-hidden border hairline">
+              <Image
+                src="/avatar.jpeg"
+                alt="Aleksey Samarskiy"
+                width={352}
+                height={352}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
 
         <GrowthLine className="w-full max-w-2xl h-auto mt-16" />
@@ -60,19 +78,21 @@ export default function Home() {
               of everything I do: I think in systems, not just screens.
             </p>
             <p>
-              Right now I'm moving into growth marketing — learning it the
-              way I learned design: by doing the work. Audits, hypothesis
-              testing, SEO, and running paid acquisition on Google and Meta,
-              alongside the creative and brand work I already own.
+              For the past 3+ years I've worked inside performance
+              marketing — producing static, motion and AI-assisted
+              creatives for paid acquisition on Meta, TikTok, Native and
+              Display, running A/B-tests alongside media buyers, and
+              leading a team of designers through that process. That's
+              where design and growth actually meet: not in theory, in the
+              daily loop of create → test → read the numbers → iterate.
             </p>
             <p>
-              My brother and I co-founded{" "}
+              My brother Mark and I co-founded{" "}
               <a href="#creako" className="text-text underline decoration-signal underline-offset-4">
                 Creako Labs
               </a>{" "}
-              together. He builds the products. I build the brand around
-              them and, increasingly, the growth engine that helps them
-              find real users.
+              together. He builds the products. I'm bringing that same
+              loop — brand, creative and growth — to the products we build.
             </p>
           </div>
         </div>
@@ -89,20 +109,21 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <p className="text-lg text-muted leading-relaxed">
-            Not an agency — a product studio. My brother and I co-founded
-            Creako Labs to build our own digital products end to end, from
-            concept to growth, rather than working to someone else's brief.
+            Not an agency — a product studio. My brother Mark and I
+            co-founded Creako Labs to build our own digital products end
+            to end, from concept to growth, rather than working to
+            someone else's brief.
           </p>
 
           <div className="bg-ink-2 border hairline rounded-2xl p-6">
             <div className="grid grid-cols-2 gap-6">
               <div>
                 <p className="eyebrow mb-2">Product & engineering</p>
-                <p className="font-display text-xl font-medium">My brother</p>
+                <p className="font-display text-xl font-medium">Mark Skrypka</p>
               </div>
               <div>
                 <p className="eyebrow eyebrow-signal mb-2">Brand & growth</p>
-                <p className="font-display text-xl font-medium">Me</p>
+                <p className="font-display text-xl font-medium">Aleksey Samarskiy</p>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t hairline">
@@ -137,8 +158,8 @@ export default function Home() {
             <p className="eyebrow eyebrow-signal mb-4">Growth & performance</p>
             <ul className="space-y-3 text-muted">
               <li>Growth audits &amp; analytics</li>
-              <li>Hypothesis testing / experiments</li>
-              <li>Google Ads &amp; Meta Ads</li>
+              <li>A/B testing with media buyers</li>
+              <li>Paid acquisition — Meta, TikTok, Google</li>
               <li>SEO</li>
             </ul>
           </div>
@@ -146,16 +167,172 @@ export default function Home() {
             <p className="eyebrow eyebrow-data mb-4">Brand & creative</p>
             <ul className="space-y-3 text-muted">
               <li>Logo &amp; brand identity</li>
-              <li>Ad creatives — video &amp; photo</li>
+              <li>Static, motion & AI-assisted ad creatives</li>
               <li>Creative direction</li>
+              <li>Midjourney, Runway, HeyGen, After Effects</li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4">Product</p>
+            <p className="eyebrow mb-4">Product & team</p>
             <ul className="space-y-3 text-muted">
               <li>UI/UX design</li>
               <li>Design systems</li>
+              <li>Leading creative teams</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* TRACK RECORD */}
+      <section id="track-record" className="max-w-content mx-auto px-6 py-20 md:py-28">
+        <p className="eyebrow mb-4">Track record</p>
+        <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-12 max-w-2xl">
+          From performance creative to building our own products.
+        </h2>
+
+        <div className="space-y-10">
+          {/* Creako Labs — now */}
+          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
+            <p className="eyebrow eyebrow-signal">Now</p>
+            <div>
+              <h3 className="font-display text-xl font-semibold mb-1">
+                Co-founder — Creako Labs
+              </h3>
+              <p className="text-muted mb-3">
+                Co-founding a product studio with Mark — brand, creative
+                direction and growth for Recal and Ray.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Brand", "Growth", "Product Design"].map((t) => (
+                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Senior Performance Creative Designer */}
+          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
+            <p className="eyebrow">Dec 2025 — Present</p>
+            <div>
+              <h3 className="font-display text-xl font-semibold mb-1">
+                Senior Performance Creative Designer
+              </h3>
+              <p className="eyebrow mb-3">Affiliate media-buying team · Poland · Remote</p>
+              <p className="text-muted mb-3">
+                Producing static, motion and AI-assisted creatives for paid
+                affiliate campaigns, working directly with media buyers on
+                testing and optimization.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Performance Marketing", "Motion Design", "AI Creative"].map((t) => (
+                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Traffic Place */}
+          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
+            <p className="eyebrow">Oct 2025 — Apr 2026</p>
+            <div>
+              <h3 className="font-display text-xl font-semibold mb-1">
+                Performance Creative Designer — Traffic Place
+              </h3>
+              <p className="eyebrow mb-3">Part-time · Remote</p>
+              <p className="text-muted mb-3">
+                Built AI-generated and UGC-style ad creatives for Sweepstakes
+                campaigns across paid social.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["UGC Advertising", "Prompt Engineering"].map((t) => (
+                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ADPRODIGIES — nested */}
+          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
+            <p className="eyebrow">Aug 2024 — Nov 2025</p>
+            <div>
+              <p className="eyebrow eyebrow-data mb-3">ADPRODIGIES · 1 yr 4 mos · Remote</p>
+
+              <div className="mb-6">
+                <h3 className="font-display text-xl font-semibold mb-1">
+                  Motion & Creative Designer
+                </h3>
+                <p className="eyebrow mb-3">Aug 2025 — Nov 2025 · Poland</p>
+                <p className="text-muted">
+                  Produced static, motion and AI-assisted creatives for
+                  iGaming campaigns in a high-volume production pipeline.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-display text-xl font-semibold mb-1">
+                  Team Lead / Performance Creative Designer
+                </h3>
+                <p className="eyebrow mb-3">Aug 2024 — Aug 2025 · 1 yr 1 mo · Ukraine</p>
+                <p className="text-muted mb-3">
+                  Led a team of 4 designers, ran weekly creative reviews with
+                  media buyers and owned the team's A/B-testing and
+                  production workflow.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Team Leadership", "Performance Marketing"].map((t) => (
+                    <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Private Media Buying Team */}
+          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 pb-10 border-b hairline">
+            <p className="eyebrow">Nov 2024 — Jul 2025</p>
+            <div>
+              <h3 className="font-display text-xl font-semibold mb-1">
+                Performance Creative Designer
+              </h3>
+              <p className="eyebrow mb-3">Affiliate media-buying team · Part-time · Ukraine / Remote</p>
+              <p className="text-muted mb-3">
+                Created static and video creatives and landing pages for
+                affiliate campaigns, reviewed directly with media buyers.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Affiliate Marketing", "Banner Design"].map((t) => (
+                  <span key={t} className="text-xs eyebrow border hairline rounded-full px-3 py-1">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Earlier roles, condensed */}
+          <div className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10">
+            <p className="eyebrow">Sep 2023 — Sep 2024</p>
+            <div>
+              <h3 className="font-display text-xl font-semibold mb-1">
+                Creative Designer → Junior Performance Designer
+              </h3>
+              <p className="eyebrow mb-3">Affiliate & performance marketing teams · Ukraine / Remote</p>
+              <p className="text-muted">
+                Early roles producing static, video and animated ad
+                creatives for Search, Sweepstakes and Crypto paid campaigns —
+                where the performance-creative loop started.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -216,13 +393,15 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap gap-4">
           <a
-            href="mailto:hello@example.com"
+            href="mailto:oleksii.samarskyii@gmail.com"
             className="bg-signal text-ink font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
           >
-            hello@example.com
+            oleksii.samarskyii@gmail.com
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/oleksii-samarskyi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="eyebrow border hairline px-6 py-3 rounded-full hover:text-text transition-colors focus-ring"
           >
             LinkedIn

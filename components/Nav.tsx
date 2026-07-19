@@ -2,6 +2,7 @@ const links = [
   { href: "#about", label: "About" },
   { href: "#creako", label: "Creako Labs" },
   { href: "#capabilities", label: "Capabilities" },
+  { href: "#track-record", label: "Track Record" },
   { href: "#products", label: "Products" },
   { href: "#contact", label: "Contact" },
 ];
