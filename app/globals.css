@@ -39,6 +39,43 @@ body {
 
 .hairline { border-color: #24262B; }
 
+/* ---- Shared actions ---- */
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.button-primary {
+  background-color: #C9A961;
+  color: #0B0C0F;
+}
+
+.button-primary:hover { opacity: 0.9; }
+
+.button-secondary {
+  border: 1px solid #24262B;
+  color: #F2F1ED;
+}
+
+.button-secondary:hover {
+  border-color: #F2F1ED;
+}
+
+.button-nav {
+  min-height: 36px;
+  padding: 0 1rem;
+  font-size: 0.8rem;
+}
+
 /* ---- Marquee ticker (monochrome, quiet) ---- */
 .marquee-track {
   display: flex;

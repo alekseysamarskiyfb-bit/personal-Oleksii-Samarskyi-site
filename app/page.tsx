@@ -14,28 +14,32 @@ export default function Home() {
       <section className="max-w-content mx-auto px-6 pt-16 pb-14 md:pt-20 md:pb-16">
         <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
           <div>
-            <p className="eyebrow eyebrow-signal mb-6">Co-founder, Creako Labs</p>
+            <p className="eyebrow eyebrow-signal mb-6">
+              Co-founder &amp; Growth Lead · Creako Labs
+            </p>
             <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight">
-              Performance creative.
+              Building products
               <br />
-              <span className="text-signal">Compounding</span> growth.
+              with creative that
+              <br />
+              <span className="text-signal">compounds</span> growth.
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted max-w-xl">
-              3+ years producing performance creative for paid acquisition.
-              Now building brand and growth for the products Creako Labs
-              makes.
+              I combine performance creative, brand and growth strategy to
+              help Creako Labs turn early-stage products into clear,
+              compelling launches.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="#contact"
-                className="bg-signal text-ink font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
+                className="button button-primary focus-ring"
               >
                 Get in touch
               </a>
               <a
                 href="#products"
-                className="tag border hairline px-6 py-3 rounded-full hover:text-text hover:border-text transition-colors focus-ring"
+                className="button button-secondary focus-ring"
               >
                 See the products
               </a>
@@ -117,8 +121,8 @@ export default function Home() {
               <a href="#creako" className="text-text underline decoration-signal underline-offset-4">
                 Creako Labs
               </a>{" "}
-              together. He builds the products. I'm bringing that same
-              loop — brand, creative and growth — to the products we build.
+              together. Mark leads product and engineering; I lead brand,
+              creative and growth across the products we build.
             </p>
           </Reveal>
         </div>
@@ -136,9 +140,9 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <Reveal>
             <p className="text-lg text-muted leading-relaxed">
-              Not an agency — a product studio. My brother Mark and I
-              co-founded Creako Labs to build our own digital products end
-              to end, from concept to growth, rather than working to
+              Creako Labs is a founder-led product studio. Mark and I build
+              our own digital products from concept to launch — combining
+              product engineering, brand and growth instead of working to
               someone else's brief.
             </p>
           </Reveal>
@@ -147,11 +151,11 @@ export default function Home() {
             <div className="bg-ink-2 border hairline rounded-2xl p-6 hover-lift">
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <p className="eyebrow mb-2">Product & engineering</p>
+                  <p className="eyebrow mb-2">Product &amp; engineering</p>
                   <p className="font-display text-xl font-semibold">Mark Skrypka</p>
                 </div>
                 <div>
-                  <p className="eyebrow eyebrow-signal mb-2">Brand & growth</p>
+                  <p className="eyebrow eyebrow-signal mb-2">Brand, creative &amp; growth</p>
                   <p className="font-display text-xl font-semibold">Aleksey Samarskiy</p>
                 </div>
               </div>
@@ -229,10 +233,10 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow eyebrow-signal mb-2">Now</p>
               <h3 className="font-display text-xl font-semibold mb-1">
-                Co-founder — Creako Labs
+                Co-founder &amp; Growth Lead — Creako Labs
               </h3>
               <p className="text-muted mb-3">
-                Co-founding a product studio with Mark — brand, creative
+                Building Creako Labs with Mark, leading brand, creative
                 direction and growth for Recal and Ray.
               </p>
               <div className="flex flex-wrap gap-2">
@@ -357,7 +361,7 @@ export default function Home() {
         <Reveal>
           <p className="eyebrow mb-4">Proof of work</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-14 max-w-2xl">
-            Products I'm growing, from Creako Labs.
+            Products I&apos;m helping bring to market at Creako Labs.
           </h2>
         </Reveal>
 
@@ -369,7 +373,7 @@ export default function Home() {
                 <p className="eyebrow">Creako Labs</p>
               </div>
               <h3 className="font-display text-2xl font-bold mb-2">Recal</h3>
-              <p className="eyebrow mb-4">Role — Growth & Creative</p>
+              <p className="eyebrow mb-4">Role — Growth, brand &amp; creative</p>
               <p className="text-muted leading-relaxed">
                 Running growth audits, testing acquisition channels and
                 building the creative — ad visuals and previews — behind
@@ -385,7 +389,7 @@ export default function Home() {
                 <p className="eyebrow">Creako Labs</p>
               </div>
               <h3 className="font-display text-2xl font-bold mb-2">Ray</h3>
-              <p className="eyebrow mb-4">Role — Growth & Creative</p>
+              <p className="eyebrow mb-4">Role — Growth, brand &amp; creative</p>
               <p className="text-muted leading-relaxed">
                 Laying the brand and growth foundation early — identity,
                 positioning and the first acquisition experiments — as the
@@ -412,7 +416,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <a
               href="mailto:oleksii.samarskyii@gmail.com"
-              className="bg-signal text-ink font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity focus-ring"
+              className="button button-primary focus-ring"
             >
               oleksii.samarskyii@gmail.com
             </a>
@@ -420,7 +424,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/oleksii-samarskyi"
               target="_blank"
               rel="noopener noreferrer"
-              className="tag border hairline px-6 py-3 rounded-full hover:text-text hover:border-text transition-colors focus-ring"
+              className="button button-secondary focus-ring"
             >
               LinkedIn
             </a>

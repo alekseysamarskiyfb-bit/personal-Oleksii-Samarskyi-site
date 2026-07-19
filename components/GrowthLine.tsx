@@ -19,10 +19,9 @@ export default function GrowthLine({
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setDrawn(true);
-          observer.disconnect();
-        }
+        // Do not disconnect here: redraw the line whenever this section
+        // re-enters the viewport, whether the user scrolls up or down.
+        setDrawn(entry.isIntersecting);
       },
       { threshold: 0.4 }
     );

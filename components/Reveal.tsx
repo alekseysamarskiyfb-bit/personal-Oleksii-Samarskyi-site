@@ -19,10 +19,9 @@ export default function Reveal({
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
+        // Keep observing so the element returns to its initial state after it
+        // leaves the viewport and plays again in either scroll direction.
+        setVisible(entry.isIntersecting);
       },
       { threshold: 0.15 }
     );

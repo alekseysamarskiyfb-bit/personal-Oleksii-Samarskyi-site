@@ -31,7 +31,7 @@ export default function Nav() {
         </ul>
         <a
           href="#contact"
-          className="text-sm font-medium bg-signal text-ink px-4 py-2 rounded-full hover:opacity-90 transition-opacity focus-ring"
+          className="button button-primary button-nav focus-ring"
         >
           Get in touch
         </a>
