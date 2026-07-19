@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import GrowthLine from "@/components/GrowthLine";
+import GrowthSignal from "@/components/GrowthSignal";
 import HeroLoader from "@/components/HeroLoader";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
@@ -19,12 +20,12 @@ export default function Home() {
             <p className="eyebrow eyebrow-signal mb-6">
               Co-founder &amp; Growth Lead · Creako Labs
             </p>
-            <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight">
-              Building products
+            <h1 className="hero-title font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight">
+              <span>Building products</span>
               <br />
-              through brand,
+              <span>through brand,</span>
               <br />
-              creative &amp; <span className="text-signal">growth.</span>
+              <span>creative &amp; <span className="text-signal">growth.</span></span>
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted max-w-xl">
               I combine performance creative, brand and growth strategy to
@@ -59,6 +60,7 @@ export default function Home() {
                 priority
               />
               <div className="portrait-overlay absolute inset-0 pointer-events-none" />
+              <div className="portrait-scan absolute inset-0 pointer-events-none" />
             </div>
             <div className="absolute -bottom-4 -left-4 bg-ink border hairline rounded-xl px-4 py-3 hidden md:block">
               <p className="eyebrow">Based in</p>
@@ -66,7 +68,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        <GrowthSignal />
       </section>
 
       <Marquee />
