@@ -21,7 +21,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aleksey Samarskiy — Co-founder, Creako Labs",
+  title: "Samarskyi Oleksii — Co-founder, Creako Labs",
   description:
     "Co-founder of Creako Labs. Building and growing digital products through brand, design and growth.",
 };

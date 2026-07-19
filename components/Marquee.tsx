@@ -12,18 +12,18 @@ const items = [
 ];
 
 export default function Marquee() {
-  const loop = [...items, ...items];
   return (
-    <div className="overflow-hidden border-y hairline py-4 bg-ink-2/60">
+    <div className="marquee overflow-hidden border-y hairline bg-ink-2/60" aria-label="Tools and platforms">
       <div className="marquee-track">
-        {loop.map((item, i) => (
-          <span
-            key={i}
-            className="tag flex items-center gap-6 px-6 text-muted shrink-0"
-          >
-            {item}
-            <span className="w-1 h-1 rounded-full bg-line" />
-          </span>
+        {[false, true].map((duplicate) => (
+          <div className="marquee-group" aria-hidden={duplicate} key={String(duplicate)}>
+            {items.map((item) => (
+              <span key={item} className="tag marquee-item text-muted">
+                {item}
+                <span className="marquee-dot" />
+              </span>
+            ))}
+          </div>
         ))}
       </div>
     </div>

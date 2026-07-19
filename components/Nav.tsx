@@ -15,7 +15,7 @@ export default function Nav() {
           href="#top"
           className="font-display font-semibold tracking-tight text-text focus-ring rounded"
         >
-          Aleksey Samarskiy
+          Samarskyi Oleksii
         </a>
         <ul className="hidden md:flex items-center gap-7">
           {links.map((l) => (

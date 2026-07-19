@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import GrowthLine from "@/components/GrowthLine";
+import HeroLoader from "@/components/HeroLoader";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import StatCounter from "@/components/StatCounter";
@@ -8,21 +9,22 @@ import StatCounter from "@/components/StatCounter";
 export default function Home() {
   return (
     <main id="top" className="font-body">
+      <HeroLoader />
       <Nav />
 
       {/* HERO */}
-      <section className="max-w-content mx-auto px-6 pt-16 pb-14 md:pt-20 md:pb-16">
-        <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
-          <div>
+      <section className="max-w-content mx-auto px-6 pt-16 pb-14 md:pt-24 md:pb-20">
+        <div className="hero-content grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
+          <div className="hero-copy">
             <p className="eyebrow eyebrow-signal mb-6">
               Co-founder &amp; Growth Lead · Creako Labs
             </p>
             <h1 className="font-display text-4xl md:text-6xl leading-[1.05] font-semibold tracking-tight">
               Building products
               <br />
-              with creative that
+              through brand,
               <br />
-              <span className="text-signal">compounds</span> growth.
+              creative &amp; <span className="text-signal">growth.</span>
             </h1>
             <p className="mt-8 text-lg md:text-xl text-muted max-w-xl">
               I combine performance creative, brand and growth strategy to
@@ -46,11 +48,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="portrait-wrap relative w-full max-w-sm mx-auto md:mx-0 md:ml-auto">
+          <div className="portrait-wrap hero-portrait relative w-full max-w-sm mx-auto md:mx-0 md:ml-auto">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border hairline">
               <Image
-                src="/avatar.jpeg"
-                alt="Aleksey Samarskiy"
+                src="/avatar-4k.jpeg"
+                alt="Samarskyi Oleksii"
                 fill
                 sizes="(min-width: 768px) 380px, 90vw"
                 className="portrait object-cover"
@@ -65,24 +67,23 @@ export default function Home() {
           </div>
         </div>
 
-        <GrowthLine className="w-full max-w-xl h-auto mt-16" />
       </section>
 
       <Marquee />
 
       {/* STATS */}
       <section className="max-w-content mx-auto px-6 py-14 md:py-16 border-b hairline">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <Reveal>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl border hairline bg-line">
+          <Reveal className="stat-card">
             <StatCounter value={3} suffix="+" label="Years in performance creative" />
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal delay={80} className="stat-card">
             <StatCounter value={4} label="Designers led" />
           </Reveal>
-          <Reveal delay={160}>
+          <Reveal delay={160} className="stat-card">
             <StatCounter value={10} suffix="+" label="Platforms & AI tools" />
           </Reveal>
-          <Reveal delay={240}>
+          <Reveal delay={240} className="stat-card">
             <StatCounter value={2} label="Products at Creako Labs" />
           </Reveal>
         </div>
@@ -156,7 +157,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="eyebrow eyebrow-signal mb-2">Brand, creative &amp; growth</p>
-                  <p className="font-display text-xl font-semibold">Aleksey Samarskiy</p>
+                  <p className="font-display text-xl font-semibold">Samarskyi Oleksii</p>
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t hairline">
@@ -434,7 +435,7 @@ export default function Home() {
 
       <footer className="border-t hairline">
         <div className="max-w-content mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-2 text-muted tag">
-          <p>Aleksey Samarskiy — Co-founder, Creako Labs</p>
+          <p>Samarskyi Oleksii — Co-founder, Creako Labs</p>
           <p>© 2026</p>
         </div>
       </footer>
