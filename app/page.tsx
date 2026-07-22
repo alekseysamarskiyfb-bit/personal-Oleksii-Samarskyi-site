@@ -186,32 +186,77 @@ export default function Home() {
           </h2>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           <Reveal>
-            <p className="eyebrow eyebrow-signal mb-4">Growth & performance</p>
-            <ul className="space-y-3 text-muted">
-              <li>Growth audits &amp; analytics</li>
-              <li>A/B testing with media buyers</li>
-              <li>Paid acquisition — Meta, TikTok, Google</li>
-              <li>SEO</li>
-            </ul>
+            <div className="bg-ink-2 border hairline rounded-2xl p-6 md:p-7 hover-lift h-full">
+              <div className="flex items-center justify-between mb-6">
+                <p className="eyebrow eyebrow-signal">Growth & performance</p>
+                <span className="tag text-muted">01</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Growth audits & analytics",
+                  "A/B testing with media buyers",
+                  "Paid acquisition — Meta, TikTok, Google",
+                  "SEO",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="tag text-muted border hairline rounded-full px-3 py-1.5 transition-colors duration-300 hover:text-text hover:border-signal/50"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
           </Reveal>
+
           <Reveal delay={80}>
-            <p className="eyebrow eyebrow-data mb-4">Brand & creative</p>
-            <ul className="space-y-3 text-muted">
-              <li>Logo &amp; brand identity</li>
-              <li>Static, motion & AI-assisted ad creatives</li>
-              <li>Creative direction</li>
-              <li>Midjourney, Runway, HeyGen, After Effects</li>
-            </ul>
+            <div className="bg-ink-2 border hairline rounded-2xl p-6 md:p-7 hover-lift h-full">
+              <div className="flex items-center justify-between mb-6">
+                <p className="eyebrow eyebrow-data">Brand & creative</p>
+                <span className="tag text-muted">02</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Logo & brand identity",
+                  "Static, motion & AI-assisted ad creatives",
+                  "Creative direction",
+                  "Midjourney",
+                  "Runway",
+                  "HeyGen",
+                  "After Effects",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="tag text-muted border hairline rounded-full px-3 py-1.5 transition-colors duration-300 hover:text-text hover:border-signal/50"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
           </Reveal>
+
           <Reveal delay={160}>
-            <p className="eyebrow mb-4">Product & team</p>
-            <ul className="space-y-3 text-muted">
-              <li>UI/UX design</li>
-              <li>Design systems</li>
-              <li>Leading creative teams</li>
-            </ul>
+            <div className="bg-ink-2 border hairline rounded-2xl p-6 md:p-7 hover-lift h-full">
+              <div className="flex items-center justify-between mb-6">
+                <p className="eyebrow">Product & team</p>
+                <span className="tag text-muted">03</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["UI/UX design", "Design systems", "Leading creative teams"].map(
+                  (t) => (
+                    <span
+                      key={t}
+                      className="tag text-muted border hairline rounded-full px-3 py-1.5 transition-colors duration-300 hover:text-text hover:border-signal/50"
+                    >
+                      {t}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

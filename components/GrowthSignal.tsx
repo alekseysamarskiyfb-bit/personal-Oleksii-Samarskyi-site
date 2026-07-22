@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
 // Same x-coordinates as the dots on the path below (out of the 920-wide
 // viewBox), converted to percentages, so labels always sit under their dot.
 const steps = [
-  { x: 22 / 920, label: "Audit", align: "start" as const },
-  { x: 290 / 920, label: "Creative", align: "center" as const },
-  { x: 520 / 920, label: "Test", align: "center" as const },
-  { x: 898 / 920, label: "Scale", align: "end" as const },
+  { x: 22 / 920, label: "Audit" },
+  { x: 290 / 920, label: "Creative" },
+  { x: 520 / 920, label: "Test" },
+  { x: 898 / 920, label: "Scale" },
 ];
 
 export default function GrowthSignal() {
@@ -71,12 +71,7 @@ export default function GrowthSignal() {
             className={`growth-signal__step growth-signal__step--${step.label.toLowerCase()}`}
             style={{
               left: `${step.x * 100}%`,
-              transform:
-                step.align === "start"
-                  ? "translateX(0)"
-                  : step.align === "end"
-                  ? "translateX(-100%)"
-                  : "translateX(-50%)",
+              transform: "translateX(-50%)",
             }}
           >
             {step.label}
