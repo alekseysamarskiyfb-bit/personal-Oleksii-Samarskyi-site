@@ -50,12 +50,12 @@ export default function StatCounter({
   }, [value]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="stat-counter">
       <p className="font-display text-4xl md:text-5xl font-semibold tracking-tight text-text">
         {count}
         <span className="text-signal">{suffix}</span>
       </p>
-      <p className="eyebrow mt-2">{label}</p>
+      <p className="eyebrow stat-counter__label">{label}</p>
     </div>
   );
 }

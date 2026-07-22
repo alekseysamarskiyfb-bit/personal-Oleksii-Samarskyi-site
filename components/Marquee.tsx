@@ -12,11 +12,13 @@ const items = [
 ];
 
 export default function Marquee() {
+  const loops = [0, 1, 2, 3];
+
   return (
     <div className="marquee overflow-hidden border-y hairline bg-ink-2/60" aria-label="Tools and platforms">
       <div className="marquee-track">
-        {[false, true].map((duplicate) => (
-          <div className="marquee-group" aria-hidden={duplicate} key={String(duplicate)}>
+        {loops.map((loop) => (
+          <div className="marquee-group" aria-hidden={loop > 0} key={loop}>
             {items.map((item) => (
               <span key={item} className="tag marquee-item text-muted">
                 {item}
