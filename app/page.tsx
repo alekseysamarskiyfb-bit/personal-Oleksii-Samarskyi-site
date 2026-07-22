@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import StatCounter from "@/components/StatCounter";
-import GrowthLoop from "@/components/GrowthLoop";
+import GrowthSignal from "@/components/GrowthSignal";
 import TimelineItem from "@/components/TimelineItem";
 
 export default function Home() {
@@ -64,7 +64,7 @@ export default function Home() {
           </div>
         </div>
 
-        <GrowthLoop />
+        <GrowthSignal />
       </section>
 
       <Marquee />
