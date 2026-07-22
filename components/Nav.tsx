@@ -30,7 +30,8 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur border-b hairline">
+    <header className="sticky top-0 z-50 border-b hairline">
+      <div className="bg-ink/90 backdrop-blur">
       <nav className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
         <a
           href="#top"
@@ -74,6 +75,7 @@ export default function Nav() {
           <span className="burger__bar" />
         </button>
       </nav>
+      </div>
 
       {/* Mobile panel */}
       <div className={`mobile-panel md:hidden ${open ? "mobile-panel--open" : ""}`}>
