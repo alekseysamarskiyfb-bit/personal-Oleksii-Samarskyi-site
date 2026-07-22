@@ -54,6 +54,7 @@ export default function Home() {
                 fill
                 sizes="(min-width: 768px) 380px, 90vw"
                 className="portrait object-cover"
+                quality={90}
                 priority
               />
               <div className="portrait-overlay absolute inset-0 pointer-events-none" />
