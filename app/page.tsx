@@ -5,10 +5,12 @@ import Reveal from "@/components/Reveal";
 import StatCounter from "@/components/StatCounter";
 import GrowthSignal from "@/components/GrowthSignal";
 import TimelineItem from "@/components/TimelineItem";
+import ScrollReset from "@/components/ScrollReset";
 
 export default function Home() {
   return (
     <main id="top" className="font-body">
+      <ScrollReset />
       <Nav />
 
       {/* HERO */}
