@@ -13,11 +13,21 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
 
+  // Lock scroll without the horizontal jump caused by the scrollbar disappearing
   useEffect(() => {
-    document.documentElement.style.overflow = open ? "hidden" : "";
+    if (open) {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
+    } else {
+      document.documentElement.style.overflow = "";
+      document.body.style.paddingRight = "";
+    }
     return () => {
       document.documentElement.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
   }, [open]);
 
@@ -29,25 +39,48 @@ export default function Nav() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Scrollspy: highlight whichever section is currently passing through the "reading band"
+  useEffect(() => {
+    const sections = links
+      .map((l) => document.querySelector(l.href))
+      .filter((el): el is HTMLElement => el !== null);
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 border-b hairline">
       <div className="bg-ink/90 backdrop-blur">
-      <nav className="max-w-content mx-auto flex items-center justify-between px-6 py-4">
+      <nav className="max-w-content mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-4 px-6 py-4">
         <a
           href="#top"
-          className="logo-mark font-mono text-sm text-text focus-ring rounded"
+          className="logo-mark font-mono text-sm text-text focus-ring rounded justify-self-start"
           onClick={() => setOpen(false)}
         >
           <span className="text-signal">~</span>oleksii.samarskyi
           <span className="logo-mark__cursor">_</span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-7">
+        <ul className="hidden md:flex items-center justify-center gap-7 justify-self-center">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="tag text-muted hover:text-text transition-colors focus-ring rounded no-underline"
+                className={`nav-link tag transition-colors focus-ring rounded no-underline ${
+                  active === l.href ? "nav-link--active text-text" : "text-muted hover:text-text"
+                }`}
               >
                 {l.label}
               </a>
@@ -55,25 +88,27 @@ export default function Nav() {
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          className="button button-primary button-nav focus-ring hidden md:inline-flex"
-        >
-          Get in touch
-        </a>
+        <div className="flex items-center gap-3 justify-self-end">
+          <a
+            href="#contact"
+            className="button button-primary button-nav focus-ring hidden md:inline-flex"
+          >
+            Get in touch
+          </a>
 
-        {/* Burger — mobile only */}
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className={`burger md:hidden focus-ring ${open ? "burger--open" : ""}`}
-        >
-          <span className="burger__bar" />
-          <span className="burger__bar" />
-          <span className="burger__bar" />
-        </button>
+          {/* Burger — mobile only */}
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className={`burger md:hidden focus-ring ${open ? "burger--open" : ""}`}
+          >
+            <span className="burger__bar" />
+            <span className="burger__bar" />
+            <span className="burger__bar" />
+          </button>
+        </div>
       </nav>
       </div>
 
@@ -89,7 +124,9 @@ export default function Nav() {
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="font-display text-2xl font-semibold tracking-tight"
+                className={`mobile-panel__link font-display text-2xl font-semibold tracking-tight ${
+                  active === l.href ? "mobile-panel__link--active" : ""
+                }`}
               >
                 {l.label}
               </a>
